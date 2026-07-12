@@ -1,0 +1,23 @@
+{
+  "name": "@workspace/backend",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "convex dev",
+    "setup": "convex dev --until-success",
+    "lint": "eslint",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    "./convex": "./convex/*.ts"
+  },
+  "devDependencies": {
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "convex": "^1.42.1"
+  }
+}
