@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs"
 import { Geist, Geist_Mono } from "next/font/google"
 
 import "@workspace/ui/globals.css"
@@ -28,7 +29,9 @@ export default function RootLayout({
       )}
     >
       <body>
-        <Provider>{children}</Provider>
+        <ClerkProvider>
+          <Provider>{children}</Provider>
+        </ClerkProvider>
       </body>
     </html>
   )
