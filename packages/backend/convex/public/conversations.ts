@@ -1,5 +1,8 @@
 import { mutation, query } from "../_generated/server"
+import { components } from "../_generated/api"
 import { ConvexError, v } from "convex/values"
+import { supportAgent } from "../system/ai/agents/supportAgent"
+import { saveMessage } from "@convex-dev/agent"
 
 // export const getMany = query({
 //   args: {
@@ -121,20 +124,17 @@ export const create = mutation({
     //   )
     //   .unique()
 
-    // const { threadId } = await supportAgent.createThread(ctx, {
-    //   userId: args.organizationId,
-    // })
+    const { threadId } = await supportAgent.createThread(ctx, {
+      userId: args.organizationId,
+    })
 
-    const threadId = "123"
-
-    // await saveMessage(ctx, components.agent, {
-    //   threadId,
-    //   message: {
-    //     role: "assistant",
-    //     content:
-    //       widgetSettings?.greetMessage || "Hello, how can I help you today?",
-    //   },
-    // })
+    await saveMessage(ctx, components.agent, {
+      threadId,
+      message: {
+        role: "assistant",
+        content: "Hello, how can I help you today?",
+      },
+    })
 
     const conversationId = await ctx.db.insert("conversations", {
       contactSessionId: session._id,
