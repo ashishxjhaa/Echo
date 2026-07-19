@@ -31,7 +31,13 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ClerkProvider>
+        <ClerkProvider
+          appearance={{
+            variables: {
+              colorPrimary: "#3C82F6"
+            }
+          }}
+        >
           <TooltipProvider>
             <Provider>
               <Toaster position='top-right' />
