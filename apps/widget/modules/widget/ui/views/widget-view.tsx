@@ -20,15 +20,13 @@ export const WidgetView = ({ organizationId }: Props) => {
     loading: <WidgetLoadingScreen organizationId={organizationId} />,
     error: <WidgetErrorScreen />,
     auth: <WidgetAuthScreen />,
-    voice: <p>TODO: Voice</p>,
     inbox: <WidgetInboxScreen />,
     selection: <WidgetSelectionScreen />,
     chat: <WidgetChatScreen />,
-    contact: <p>TODO: Contact</p>,
   }
 
   return (
-    <main className="flex h-full min-h-screen w-full min-w-screen flex-col overflow-hidden rounded-xl border bg-muted">
+    <main className="flex h-full w-full flex-col overflow-hidden rounded-xl border bg-muted">
       {screenComponents[screen]}
     </main>
   )
