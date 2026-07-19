@@ -5,6 +5,7 @@ import "@workspace/ui/globals.css"
 import { Provider } from "@/components/providers"
 import { cn } from "@workspace/ui/lib/utils"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
+import { Toaster } from "@workspace/ui/components/sonner"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -32,7 +33,10 @@ export default function RootLayout({
       <body>
         <ClerkProvider>
           <TooltipProvider>
-            <Provider>{children}</Provider>
+            <Provider>
+              <Toaster position='top-right' />
+              {children}
+            </Provider>
           </TooltipProvider>
         </ClerkProvider>
       </body>
