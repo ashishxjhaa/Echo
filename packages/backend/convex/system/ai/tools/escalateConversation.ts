@@ -1,5 +1,5 @@
 import { createTool } from "@convex-dev/agent";
-import z from "zod";
+import { z } from "zod/v4";
 import { internal } from "../../../_generated/api";
 import { supportAgent } from "../agents/supportAgent";
 

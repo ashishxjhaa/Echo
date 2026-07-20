@@ -138,7 +138,9 @@ export const addFile = action({
       mimeType,
     });
 
-    const { entryId, created } = await rag.add(ctx, {
+    const { entryId, created } = await rag.add(
+      ctx as unknown as Parameters<typeof rag.add>[0],
+      {
       // SUPER IMPORTANT: What search space to add this to. You cannot search across namespaces,
       // If not added, it will be considered global (we do not want this)
       namespace: orgId,
