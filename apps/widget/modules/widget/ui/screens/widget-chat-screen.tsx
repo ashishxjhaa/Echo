@@ -187,9 +187,11 @@ export const WidgetChatScreen = () => {
           })}
         </AISuggestions>
       )}
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <AIInput className="rounded-none border-x-0 border-b-0">
-          <Field>
+      <AIInput
+        className="rounded-none border-x-0 border-b-0"
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
+        <Field>
             <AIInputTextarea
               disabled={conversation?.status === "resolved"}
               {...form.register("message")}
@@ -225,7 +227,6 @@ export const WidgetChatScreen = () => {
             />
           </AIInputToolbar>
         </AIInput>
-      </form>
     </>
   )
 }
