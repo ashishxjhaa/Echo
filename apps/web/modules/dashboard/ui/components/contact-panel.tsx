@@ -198,6 +198,7 @@ export const ContactPanel = () => {
           </div>
         </div>
         <Button className="w-full" size="lg"
+          nativeButton={false}
           render={
             <Link href={`mailto:${contactSession.email}`}>
               <MailIcon />
@@ -211,8 +212,6 @@ export const ContactPanel = () => {
         {contactSession.metadata && (
           <Accordion
             className="w-full rounded-none border-y"
-            collapsible
-            type="single"
           >
             {accordionSections.map((section) => (
               <AccordionItem

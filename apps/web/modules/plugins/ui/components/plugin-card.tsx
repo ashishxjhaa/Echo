@@ -75,7 +75,7 @@ export const PluginCard = ({
 
       <div className="text-center">
         <Button
-          className="size-full"
+          className="size-full p-1.5"
           disabled={isDisabled}
           onClick={onSubmit}
           variant="default"

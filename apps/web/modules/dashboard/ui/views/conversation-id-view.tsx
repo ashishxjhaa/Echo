@@ -184,7 +184,6 @@ export const ConversationIdView = ({
       </AIConversation>
 
       <div className="p-2">
-        <form>
           <AIInput onSubmit={form.handleSubmit(onSubmit)}>
             <Field>
               <AIInputTextarea
@@ -241,7 +240,6 @@ export const ConversationIdView = ({
               />
             </AIInputToolbar>
           </AIInput>
-        </form>
       </div>
     </div>
   )
