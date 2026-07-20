@@ -1,12 +1,12 @@
-import { Protect } from "@clerk/nextjs"
+import { Show } from "@clerk/nextjs"
 
 import { PremiumFeatureOverlay } from "@/modules/billing/ui/components/premium-feature-overlay"
 import { VapiView } from "@/modules/plugins/ui/view/vapi-view"
 
 const Page = () => {
   return (
-    <Protect
-      condition={(has) => has({ plan: "pro" })}
+    <Show
+      when={(has) => has({ plan: "pro" })}
       fallback={
         <PremiumFeatureOverlay>
           <VapiView />
@@ -14,7 +14,7 @@ const Page = () => {
       }
     >
       <VapiView />
-    </Protect>
+    </Show>
   )
 }
 

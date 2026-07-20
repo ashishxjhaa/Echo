@@ -126,6 +126,7 @@ export const WidgetLoadingScreen = ({
 
     if (widgetSettings !== undefined) {
       setWidgetSettings(widgetSettings)
+      setStep("done")
     }
   }, [step, widgetSettings, setStep, setWidgetSettings, setLoadingMessage])
 
